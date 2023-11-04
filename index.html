@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="tasks-pane">
+           
+            <ul id="task-list">
+                <h2>Tasks</h2>
+                <p>Add tasks to your list by typing to the right and <br>pressing enter. You may then view pending tasks below.</p>
+            </ul>
+        </div>
+        <div>
+            <div class="task-form-pane">
+                <form id="task-form">
+                    <input type="text" id="task-input" placeholder="I need to ..." required>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const taskForm = document.getElementById('task-form');
+        const taskInput = document.getElementById('task-input');
+        const taskList = document.getElementById('task-list');
+
+        taskForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const taskText = taskInput.value.trim();
+            if (taskText === '') {
+                return;
+            }
+
+            const taskItem = document.createElement('li');
+            taskItem.className = 'task';
+            taskItem.innerHTML = `
+                <span>${taskText}</span>
+                <span class="delete-task">✖️</span>
+            `;
+
+            taskList.appendChild(taskItem);
+            taskInput.value = '';
+
+            const deleteButton = taskItem.querySelector('.delete-task');
+            deleteButton.addEventListener('click', function () {
+                taskItem.remove();
+            });
+        });
+    </script>
+</body>
+
+</html>

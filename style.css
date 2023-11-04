@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h2,p{
+    margin: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.tasks-pane{
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin: 3px;
+    border-radius: 5px;
+}
+.task-form-pane {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.tasks-pane {
+    min-width: 300px;
+    background-color: #f0f0f0;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    background-color: #ebebeb;
+    padding: 5px;
+    
+}
+
+.delete-task {
+    cursor: pointer;
+}
+#task-list{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#task-input{
+   padding: 10px;
+   border: white;
+   font-size: 40px;
+
+}
